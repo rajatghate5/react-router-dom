@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Character Limit Upto 300</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="container" class="df-col">
+        <h2>Word Limit Upto 300</h2>
+        <div class="card df-col">            
+            <textarea id="box" cols="38" rows="10" placeholder="Enter Three Hundred Words" oninput="checkLen()"></textarea>
+            <!-- <input type="button" value="Click" onclick="maxLen()"> -->
+        </div>
+        <p id="res"></p>
+    </div>
+
+    <script>
+        const checkLen = () => {
+            var txt = document.getElementById('box').value;
+            if (txt.length > 300) {
+                document.getElementById('box').disabled = true;
+                return;
+            }
+        }
+
+        // const maxLen = () => {
+        //     var txt = document.getElementById('box').value;
+        //     if(txt.length > 300){
+        //         document.getElementById('box').disabled = true;
+        //         return;
+        //     }
+        // }
+    </script>
+</body>
+
+</html>

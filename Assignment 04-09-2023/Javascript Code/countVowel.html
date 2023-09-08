@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Count Vowel</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="container" class="df-col">
+        <h2>Count Vowel In Name</h2>
+        <div class="card df-col">
+            <input type="text" placeholder="Enter Name" id="name">
+            <input type="button" value="Click" onclick="check()">
+            <h3 id="res"></h3>
+        </div>
+    </div>
+    <script>
+      const check = () => {
+        var txt = document.getElementById('name').value;
+        var txt = txt.toLowerCase();
+        var countVowel = 0;
+        var countConsonant = 0;
+        for(var i of txt){
+            if(i == 'a' || i == 'e' || i == 'i' || i == 'o' || i == 'u'){
+                countVowel++;
+            }else{
+                countConsonant++;
+            }
+        }
+        document.getElementById('res').innerHTML = `The total consonant is ${countConsonant} and total Vowel is ${countVowel}`
+      }
+    </script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Repeated Word Count</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="container" class="df-col">
+        <h2>Count Repeated Words</h2>
+        <div class="card df-col">
+            <input type="text" placeholder="Enter Full Name" id="fname">
+            <input type="button" value="Click" onclick="check()">
+            <h3 id="res"></h3>
+        </div>
+    </div>
+
+    <script>
+        const check = () => {
+            var Name = document.getElementById('fname').value;
+            var Name = Name.toLowerCase()
+            var count = 0;
+            var arr = [];
+
+            for (var i = 0; i < Name.length; i++) {
+                for (var j = i + 1; j < Name.length; j++) {
+                    if (Name[i] === " ") {
+                        break;
+                    }
+
+                    if (Name[i] == Name[j]) {
+                        var flag = true;
+                        for (var k of arr) {
+                            if (Name[i] == k) {
+                                flag = false;
+                                break;
+                            }
+                        }
+                        if (flag) {
+                            count++;
+                            arr.push(Name[i])
+                            break;
+                        }
+                    }
+
+                }
+            }
+            document.getElementById('res').innerHTML = `The total repeated characters are ${count}`
+        }
+    </script>
+</body>
+
+</html>
